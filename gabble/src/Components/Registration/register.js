@@ -25,7 +25,7 @@ export default function Reg(){
             <div   className="wdip"><input className="ip"  type="password"  placeholder="password"></input></div>
         </div>
         <div>
-            <button className="bn">Submit</button>
+          <a href='/intro'>  <button className="bn">Submit</button></a>
         </div>
         
         
