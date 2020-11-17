@@ -7,10 +7,12 @@ export default function Lands(){
         </img>
         <div className="flexes1">
             <div>
-            <p>Sign Up</p></div>
+            <a href="/reg">
+            <p>Sign Up</p></a></div>
             <div>
             <p>   /  </p></div>
             <div>
-            <p>Sign In</p></div></div>
+                <a href="/login">
+            <p>Sign In</p></a></div></div>
     </div>);
 }

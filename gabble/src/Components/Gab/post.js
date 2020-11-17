@@ -2,16 +2,17 @@ import React from 'react';
 import './post.css'
 export default function Postss(){
     return(
-    <div   className="newgab">
+    <div   >
         <div>
         <input className="gt" placeholder="Gab Title"></input>
         </div>
 
         <div >
-            <input className="ng " placeholder="New Gab" type="text"></input>
+            <input className="ng " type="text"></input>
         </div>
         <div>
-            <button className="bn">Post</button>
+            <a href='/gab'>
+            <button className="bn">Post</button></a>
         </div>
 
     </div>

@@ -21,7 +21,7 @@ export default function Login(){
         </div>
         
         <div>
-            <button className="bn">Submit</button>
+            <a href='/gab'><button className="bn">Submit</button></a>
         </div>
         
         

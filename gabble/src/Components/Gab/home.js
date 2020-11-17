@@ -52,7 +52,7 @@ export default function Homies() {
   ];
   return (
     <div>
-      <div className="posts">
+      <div className="posts1">
         {posts.map((e) => (
           <div>
             <p className="ph">{e.name}</p>

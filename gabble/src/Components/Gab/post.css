@@ -1,12 +1,12 @@
-.menus{
+/* .menus{
     margin-top: 10%;
     width:20%;
-    margin-left:10%;
+    margin-left:5%;
     margin-right:6%;
     
     
    
-}
+} */
 .flexes{
     display: flex;
     justify-content: space-evenly;
@@ -21,12 +21,13 @@
     border: 2px black solid;
     margin-top: 8%;
     
-    width: 500px;
+    /* width: 500px; */
 
 }
 
 .newgab{
-        width:80%;
+        width:70%;
+        
         
         
         
@@ -44,7 +45,7 @@
     margin-top: 4%;
     
     height:150px;
-    width: 500px;
+    /* width: 500px; */
 
 }
 
@@ -58,9 +59,10 @@
     padding-right: 4%;
     font-size:1.5rem;
     border-radius: 15px;
-    margin-left: 120%;
+    /* margin-left: 120%; */
     margin-top: 6%;
     cursor: pointer;
+    float: left;
     
 }
 

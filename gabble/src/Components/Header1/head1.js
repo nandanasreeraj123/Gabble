@@ -7,7 +7,7 @@ export default function Heads() {
         <img className="gabimg" src="images/Gabble.png" alt="gab"></img>
       </div>
       <div>
-          <p>Logout</p>
+         <a href='/'><p>Logout</p></a> 
       </div>
     </div>
   );
