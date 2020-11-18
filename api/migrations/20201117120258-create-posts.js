@@ -11,6 +11,7 @@ module.exports = {
       postid: {
         type: Sequelize.INTEGER,
         
+        
       },
       title: {
         type: Sequelize.STRING
