@@ -1,4 +1,4 @@
-// 
+//
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var comment = sequelize.define('comments', {
@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
   }, {});
 
   comment.associate = function(models) {
-    comment.belongsTo(models.post,{as : 'posts', foreignKey: 'id'})
+    comment.belongsTo(models.posts,{as : 'posts', foreignKey: 'id'})
   }
 
   return comment;
