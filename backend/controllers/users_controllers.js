@@ -32,15 +32,15 @@ module.exports.signUp=async function(req,res){
 module.exports.signIn=async function(req,res){
 
 }
-// get for /users/findAll
+// get for /users/findAll - Nandana
 module.exports.findAll=async function(req,res){
-
+ 
 }
-// get for /users/findOne/:id
+// get for /users/findOne/:id - Maria
 module.exports.findOne=async function(req,res){
 
 }
-// get for /users/deleteOne/:id
+// get for /users/deleteOne/:id - Lakshmi
 module.exports.deleteOne=async function(req,res){
 
 }
