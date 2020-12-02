@@ -1,5 +1,8 @@
 const express = require('express');
 const cors=require('cors');
+const bodyParser = require('body-parser')
+
+
 // var createError = require('http-errors');
 // var path = require('path');
 // var cookieParser = require('cookie-parser');
@@ -10,10 +13,13 @@ const cors=require('cors');
 // var usersRouter = require('./routes/users');
 // var testAPIRouter=require('./routes/testAPI');
 const models = require('./models');
+
 const dbPORT=5432;
 
 const app = express();
 const port=5000;
+app.use(bodyParser.json())
+
 // // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'jade');
@@ -21,6 +27,7 @@ const port=5000;
 // app.use(logger('dev'));
 app.use(express.json());
 app.use(cors());
+app.use('/',require('./routes'));
 
 // app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser());
