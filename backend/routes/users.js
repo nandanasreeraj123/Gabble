@@ -10,7 +10,7 @@ router.get('/',userController.home);
 // router.get('/sign-up',userController.signUp);
 // router.get('/sign-in',userController.signIn);
 router.post('/create',userController.create);
-router.get('/profile/:id',userController.profile);
+router.get('/profile/:id',userController.profile); //TODO: authentication 
 
 // //use passport as middleware to authenticate
 // router.post('/create-session',passport.authenticate(

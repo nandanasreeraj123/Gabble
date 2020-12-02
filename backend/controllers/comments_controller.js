@@ -1,0 +1,21 @@
+const Comment=require('../models/comment');
+const Post=require('../models/post');
+
+//TODO: 
+module.exports.create=async function(req,res){
+    try{
+        // let post=await Post.findById(req.body.post);
+    }catch(err){
+
+    }
+}
+
+//TODO: 
+module.exports.destroy=async function(req,res){
+    try{
+        // let comment=await Comment.findById(req.params.id);
+
+    }catch(err){
+
+    }
+}
