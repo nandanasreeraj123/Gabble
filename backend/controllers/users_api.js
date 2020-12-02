@@ -1,11 +1,3 @@
-// const Sequelize = require('sequelize');
-// const env = process.env.NODE_ENV || 'development';
-// const config = require(__dirname + '/../config/config.json')[env];
-
-// let sequelize = new Sequelize(config.database, config.username, config.password, config);
-// const DataTypes = sequelize.DataTypes;
-
-
 const db=require('../models/index.js');
 const User = db.users;
 const jwt=require('jsonwebtoken');
@@ -18,7 +10,7 @@ module.exports.home=function(req,res){
 module.exports.profile=async function(req,res){
     try{
         const user = await User.findOne({
-            where: { userid: req.params.id }
+            where: { id: req.params.id }
         });
         if (user) {
             return res.status(200).json({user});
@@ -28,7 +20,6 @@ module.exports.profile=async function(req,res){
         return res.status(500).send(error.message);
     }
 };
-// get for /users/profile/:id
 // post for /users/update/:id
 // get for /users/sign-up
 // get for /users/sign-in
