@@ -10,6 +10,9 @@ var testAPIRouter=require('./routes/testAPI');
 const models = require('./models');
 const PORT=5432;
 
+const models = require('./models');
+const PORT=5432;
+
 var app = express();
 
 // view engine setup
@@ -41,6 +44,28 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+// To check the connection of database
+models.sequelize.sync().then(function(){
+  app.listen(PORT,function(){
+    console.log("==> , PORT",PORT);
+
+  })
+})
+.catch(err =>{
+  console.error('Unable to connect to the database',err);
+});
+//Updating like table(sample)
+const like = models.likes.build({
+  like:678
+});
+//Saving the updation
+// like.save().then(function(newLike){
+//   console.log(newLike);
+// });
+//Displaying the contents of like table
+models.likes.findOne().then(function(likes){
+  console.log(likes);
 });
 
 models.sequelize.sync().then(function() {
