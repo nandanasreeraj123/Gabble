@@ -7,6 +7,8 @@ var cors=require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var testAPIRouter=require('./routes/testAPI');
+const models = require('./models');
+const PORT=5432;
 
 var app = express();
 
@@ -40,5 +42,14 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+models.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("==> , PORT", PORT);
+  })
+  })
+  .catch(err => {
+  console.error('Unable to connect to the database ', err);
+  });
 
 module.exports = app;
