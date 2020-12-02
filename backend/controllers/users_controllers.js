@@ -21,8 +21,29 @@ module.exports.profile=async function(req,res){
     }
 };
 // post for /users/update/:id
+module.exports.update=async function(req,res){
+
+}
 // get for /users/sign-up
+module.exports.signUp=async function(req,res){
+
+}
 // get for /users/sign-in
+module.exports.signIn=async function(req,res){
+
+}
+// get for /users/findAll
+module.exports.findAll=async function(req,res){
+
+}
+// get for /users/findOne/:id
+module.exports.findOne=async function(req,res){
+
+}
+// get for /users/deleteOne/:id
+module.exports.deleteOne=async function(req,res){
+
+}
 // post for /users/create
 module.exports.create=async function(req,res){
     try{
@@ -47,7 +68,9 @@ module.exports.create=async function(req,res){
     }
 }
 // get for /users/sign-out
+module.exports.destroySession=async function(req,res){
 
+}
 // authhentication
 module.exports.createSession=async function(req,res){
     try{

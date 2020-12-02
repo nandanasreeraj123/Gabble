@@ -19,3 +19,17 @@ module.exports.destroy=async function(req,res){
 
     }
 }
+//TODO: 
+module.exports.findAll=async function(req,res){
+
+}
+
+//TODO: 
+module.exports.findOne=async function(req,res){
+
+}
+
+//TODO: 
+module.exports.deleteOne=async function(req,res){
+
+}
