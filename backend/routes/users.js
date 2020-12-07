@@ -12,7 +12,7 @@ router.get('/',userController.home);   //localhost:5000/users/
 // router.get('/sign-in',userController.signIn);//localhost:5000/users/sign-in
 router.post('/create',userController.create);//localhost:5000/users/create
 router.get('/profile/:id',userController.profile);  //localhost:5000/users/profile/3
-// router.get('/findAll',userController.findAll);
+router.get('/findAll',userController.findAll);
 // router.get('/findOne/:id',userController.findOne);
 // router.post('/update/:id',userController.update);
 // router.get('/deleteOne/:id',userController.deleteOne);

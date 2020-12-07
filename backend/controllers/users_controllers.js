@@ -34,7 +34,35 @@ module.exports.signIn=async function(req,res){
 }
 // get for /users/findAll - Nandana
 module.exports.findAll=async function(req,res){
- 
+    // try{
+    //     const user = await User.find({
+    //     });
+    //     if (user) {
+    //         return res.status(200).json({user});
+    //     }
+    //     return res.status(404).send("Users does not exists");
+    // }catch(err){
+    //     return res.status(500).send(error.message);
+    // }
+    // pool.query('SELECT * FROM users', (error, results) => {
+    //     if (error) {
+    //       throw error
+    //     }
+    //     response.status(200).json(results.rows)
+    //   })
+    try{
+        const user = await User.findAll({
+        
+        });
+        if (user) {
+            return res.status(200).json({user});
+        }
+        return res.status(404).send("User with the specified userid does not exists");
+    }catch(err){
+        return res.status(500).send(error.message);
+    }
+    
+
 }
 // get for /users/findOne/:id - Maria
 module.exports.findOne=async function(req,res){
