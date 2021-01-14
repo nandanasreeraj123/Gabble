@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./maingab.css";
 import {BsHeartFill} from 'react-icons/bs';
 import {BiCommentDetail} from 'react-icons/bi';
 
 import {IconContext} from 'react-icons';
 export default function Homies() {
+  const [uploads, setUploads] = useState([]);
+
+  useEffect(() => {
+    if (!localStorage.getItem("loggedIn")) {
+      localStorage.setItem("loggedIn", false);
+    }
+  }, []);
+
     const likes=(j)=>{
         for (let i = 0; i < posts.length; i++) {
             const element = posts[i];
