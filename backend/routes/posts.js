@@ -9,7 +9,7 @@ const postController=require('../controllers/posts_controller');
 /* * * * ROUTES TO IMPLEMENT * * */
 router.post('/create',postController.create);   
 // router.get('/destroy/:id',postController.destroy); 
-// router.get('/findAll',postController.findAll);
+router.get('/findAll',postController.findAll);
 // router.get('/findOne/:id',postController.findOne);
 // router.get('/deleteOne/:id',postController.findOne);
 /* * * * END ROUTES * * * */

@@ -3,8 +3,6 @@ const db=require('../models/index.js');
 const User = db.users;
 const Post=db.posts;
 
-console.log("\nuser is ",User);
-console.log("\npost is ",Post);
 //TODO: 
 module.exports.create=async function(req,res){
     const title = req.body.title;
@@ -42,7 +40,16 @@ module.exports.destroy=async function(req,res){
 
 //TODO: 
 module.exports.findAll=async function(req,res){
-
+    try{
+        const allpost = await Post.findAll({
+        });
+        if (allpost) {
+            return res.status(200).json({allpost});
+        }
+        return res.status(404).send("couldnt find");
+    }catch(err){
+        return res.status(500).send(error.message);
+    }
 }
 
 //TODO: 
