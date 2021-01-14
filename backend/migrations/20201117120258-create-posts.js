@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       postid: {
-        type: Sequelize.INTEGER,    
+        type: Sequelize.INTEGER   
       },
       title: {
         type: Sequelize.STRING
@@ -19,6 +19,10 @@ module.exports = {
       },
       image:{
         type: Sequelize.TEXT
+      },
+      like:{
+        defaultValue: 0,
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

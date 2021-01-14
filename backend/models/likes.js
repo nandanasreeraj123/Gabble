@@ -23,9 +23,11 @@
 //   return likes;
 // };
 'use strict';
+
 module.exports = function(sequelize, DataTypes) {
   var like = sequelize.define('likes', {
-    like: DataTypes.BOOLEAN
+    userId:DataTypes.STRING,
+    postId:DataTypes.STRING
   }, {});
 
   like.associate = function(models) {

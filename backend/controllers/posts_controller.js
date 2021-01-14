@@ -2,6 +2,7 @@ const Comment=require('../models/comments');
 const db=require('../models/index.js');
 const User = db.users;
 const Post=db.posts;
+const Like=db.likes;
 
 //TODO: 
 module.exports.create=async function(req,res){
@@ -60,4 +61,25 @@ module.exports.findOne=async function(req,res){
 //TODO: 
 module.exports.deleteOne=async function(req,res){
 
+}
+
+module.exports.likes=async function(req,res){
+    try{
+        Like.create({
+            userId:req.body.userId,
+            postId:req.body.postId
+          }).then(async function(like){
+            try{
+                    Post.increment({likes: 1}, { where: { id: req.body.postId } })
+                    return res.status(200).json({like});
+                }catch(err){
+                return res.status(500).send(err.message);
+            }
+          }).catch(function(error){
+              console.log("$$\n",error);
+              return res.status(500).send(error.message);
+            })
+    }catch(err){
+        return res.status(404).send("Some other");
+    }
 }
