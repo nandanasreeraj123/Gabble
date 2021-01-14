@@ -53,9 +53,19 @@ module.exports.findAll=async function(req,res){
     }
 }
 
-//TODO: 
-module.exports.findOne=async function(req,res){
-
+//TODO:  /posts/findByUserId/:id
+module.exports.findByUserId=async function(req,res){
+    try{
+        const post = await Post.findAll({
+            where: { userId: req.params.id }
+        });
+        if (post) {
+            return res.status(200).json({post});
+        }
+        return res.status(404).send("Post with the specified userid does not exists");
+    }catch(err){
+        return res.status(500).send(error.message);
+    }
 }
 
 //TODO: 

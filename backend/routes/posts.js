@@ -11,7 +11,7 @@ router.post('/create',postController.create);
 // router.get('/destroy/:id',postController.destroy); 
 router.get('/findAll',postController.findAll);
 router.post('/like',postController.likes);
-// router.get('/findOne/:id',postController.findOne);
+router.get('/findByUserId/:id',postController.findByUserId);
 // router.get('/deleteOne/:id',postController.findOne);
 /* * * * END ROUTES * * * */
 

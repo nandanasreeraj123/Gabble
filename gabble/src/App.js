@@ -5,6 +5,7 @@ import Lands from "./Components/Land/landing";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // import { Router } from "@reach/router";
 import Gabble from "./Components/Gab/maingab";
+import Profile from "./Components/Gab/profile";
 import Login from "./Components/login/login";
 import Intro from "./Components/Intro/intro";
 
@@ -18,6 +19,7 @@ class App extends React.Component {
           <Route path="/gab" exact render={() => <Gabfinals />} />
           <Route path="/login" exact render={() => <Loginpage />} />
           <Route path="/intro" exact render={() => <Intropage />} />
+          <Route path="/profile" exact render={() => <Profilepage />} />
         </Router>
       </div>
     );
@@ -38,5 +40,8 @@ function Loginpage() {
 }
 function Intropage() {
   return <Intro></Intro>;
+}
+function Profilepage() {
+  return <Profile></Profile>;
 }
 export default App;

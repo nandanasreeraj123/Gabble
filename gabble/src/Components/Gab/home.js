@@ -21,57 +21,24 @@ export default function Homies() {
     });
   }, []);
 
-// TODO:likePost
+const likePost = (id,key) => {
+    var tempLikes = uploads;
+    tempLikes[key].likes = tempLikes[key].likes + 1;
 
-    const likes=(j)=>{
-        for (let i = 0; i < posts.length; i++) {
-            const element = posts[i];
-            if(element.id===j && element.like===0){
-                element.like=1;
-                console.log(element.like);
-            }else if(element.id===j && element.like===1){
-                element.like=0;
-            }
-            
-        }
-        console.log(posts);
-    }
-  var posts = [
-    {id:1,
-      name: "Post 1",
-      like: 0,
-      content:
-        "some random conent for post 1 some random content for post 1 ome random conent for post 1 some random content for post 1 ome random conent for post 1 some random content for post 1",
-    },
-    {id:2,
-      name: "Post 2",
-      like: 0,
-      content:
-        "some random conent for post 2 some random content for post 1 ome random conent for post 1 some random content for post 1 ome random conent for post 1 some random content for post 1",
-    },
-    {id:3,
-      name: "Post 3",
-      like: 0,
-      content:
-        "some random conent for post 3 some random content for post 1 ome random conent for post 1 some random content for post 1 ome random conent for post 1 some random content for post 1",
-    },
-    {id:4,
-      name: "Post 4",
-      like: 0,
-      content:
-        "some random conent for post 4 some random content for post 1 ome random conent for post 1 some random content for post 1 ome random conent for post 1 some random content for post 1",
-    },
-    {id:5,
-      name: "Post 5",
-      like: 0,
-      content:
-        "some random conent for post 5 some random content for post 1 ome random conent for post 1 some random content for post 1 ome random conent for post 1 some random content for post 1",
-    },
-  ];
+    Axios.post("http://localhost:5000/posts/like", {
+        userId: localStorage.getItem("userId"),
+        postId: id,
+    }).then((response) => {
+      setUploads(tempLikes);
+      console.log("u liked");
+    });
+};
+  
   return (
     <div>
       {
-      uploads.map((val) => {
+      uploads.map((val,key) => {
+        {console.log(val)}
           return(
               <div className="posts1">
                   <div>
@@ -82,9 +49,17 @@ export default function Homies() {
                         <p> by @{val.author}</p>
                         <div className="pb">
                           <p>{val.body}</p>
+                          <p>{val.likes}</p>
+
                         </div>
                         <div className="flexes9">
-                            
+
+                        <IconContext.Provider value={{size:"3.5%", color:"rgb(255, 255, 195)"}}>
+                        <BsHeartFill onClick={() => {
+                            likePost(val.id, key);
+                        }}>
+                        </BsHeartFill>
+                        </IconContext.Provider>
                         {/* {e.like===0&&<IconContext.Provider value={{size:"3.5%", color:"rgb(255, 255, 195)"}}>
                             <BsHeartFill onClick={(j)=>likes(e.id)}>
 
