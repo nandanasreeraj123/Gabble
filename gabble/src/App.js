@@ -8,18 +8,6 @@ import Login from "./Components/login/login";
 import Intro from "./Components/Intro/intro";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { apiResponse: "" };
-  }
-  callAPI() {
-    fetch("http://localhost:9000/testAPI")
-      .then((res) => res.text())
-      .then((res) => this.setState({ apiResponse: res }));
-  }
-  componentWillMount() {
-    this.callAPI();
-  }
   render() {
     return (
       <div>
