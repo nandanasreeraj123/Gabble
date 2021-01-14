@@ -24,8 +24,8 @@ app.use(bodyParser.json())
 // app.set('view engine', 'jade');
 
 // app.use(logger('dev'));
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 app.use('/',require('./routes')); //localhost:5000/......
 
 app.use(express.urlencoded({ extended: true }));

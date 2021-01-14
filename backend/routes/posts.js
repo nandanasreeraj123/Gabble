@@ -7,7 +7,7 @@ const postController=require('../controllers/posts_controller');
 // router.get('/destroy/:id',passport.checkAuthentication,postController.destroy);
 
 /* * * * ROUTES TO IMPLEMENT * * */
-// router.post('/create',postController.create);   
+router.post('/create',postController.create);   
 // router.get('/destroy/:id',postController.destroy); 
 // router.get('/findAll',postController.findAll);
 // router.get('/findOne/:id',postController.findOne);

@@ -50,7 +50,7 @@ module.exports.signIn=async function(req,res){
       })
         .then(user => {
           if (!user) {
-            return res.status(404).send({ message: "User Not found." });
+            return res.status(404).send({ loggedIn:false,message: "User Not found." });
           }
     
           var passwordIsValid = bcrypt.compareSync(
@@ -59,6 +59,7 @@ module.exports.signIn=async function(req,res){
           );
           if (!passwordIsValid) {
             return res.status(401).send({
+              loggedIn:false,
               accessToken: null,
               message: "Invalid Password!"
             });
@@ -67,7 +68,7 @@ module.exports.signIn=async function(req,res){
           var token = jwt.sign({ id: user.id }, config.secret, {
             expiresIn: 86400 // 24 hours
           });
-          return res.status(200).send({ auth: true, token: token });
+          return res.status(200).send({ loggedIn:true, username:req.body.username,id:user.id,auth: true, token: token });
         })
 }
 // get for /users/findAll - Nandana

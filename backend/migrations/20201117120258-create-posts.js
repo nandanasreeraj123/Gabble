@@ -9,14 +9,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       postid: {
-        type: Sequelize.INTEGER,
-        
-        
+        type: Sequelize.INTEGER,    
       },
       title: {
         type: Sequelize.STRING
       },
       body: {
+        type: Sequelize.TEXT
+      },
+      image:{
         type: Sequelize.TEXT
       },
       createdAt: {
