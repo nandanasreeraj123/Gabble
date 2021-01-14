@@ -18,9 +18,11 @@ export default function Login(){
           username: username,
           password: password,
         }).then((response) => {
+          console.log("this is response",response);
           if (response.data.loggedIn) {
             localStorage.setItem("loggedIn", true);
             localStorage.setItem("username", response.data.username);
+            localStorage.setItem("userId", response.data.id);
             history.push("/gab");
           } else {
             setErrorMessage(response.data.message);
