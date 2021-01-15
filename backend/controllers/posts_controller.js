@@ -1,8 +1,8 @@
-const Comment=require('../models/comments');
 const db=require('../models/index.js');
 const User = db.users;
 const Post=db.posts;
 const Like=db.likes;
+const Comment=db.comments;
 
 //TODO: 
 module.exports.create=async function(req,res){
@@ -99,5 +99,25 @@ module.exports.likes=async function(req,res){
             })
     }catch(err){
         return res.status(404).send("Some other");
+    }
+}
+module.exports.comment=async function(req,res){
+    const username = req.body.username;
+    const postId = req.params.postId ;
+    const description = req.body.description ;
+    console.log("inside request /posts/comment -> postId is",postId);
+    try{
+        Comment.create({
+            username:username,
+            body: description,
+            postId:postId
+          }).then(function(comment){
+              return res.status(200).json({comment});
+          }).catch(function(error){
+              console.log("$$\n",error);
+              return res.status(500).send(error.message);
+            })
+    }catch(err){
+        return res.status(404).send("Comment not found");
     }
 }

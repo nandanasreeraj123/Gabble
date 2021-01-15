@@ -8,6 +8,7 @@ import {BiCommentDetail} from 'react-icons/bi';
 import {IconContext} from 'react-icons';
 export default function Homies() {
   const [uploads, setUploads] = useState([]);
+  const [body, setBody] = useState("");
 
   useEffect(() => {
     if (!localStorage.getItem("loggedIn")) {
@@ -33,7 +34,16 @@ const likePost = (id,key) => {
       console.log("u liked");
     });
 };
-  
+const Comment = (postId) => {
+  console.log("body is ",body);
+  console.log("postId is ",postId);
+  Axios.post(`http://localhost:5000/posts/comment/${postId}`, {
+        username: localStorage.getItem("username"),
+        description:body
+    }).then((response) => {
+      console.log("u liked");
+    });
+}
   return (
     <div>
       {
@@ -72,9 +82,15 @@ const likePost = (id,key) => {
 
                             </BsHeartFill>
                         </IconContext.Provider>} */}
-            {/* <IconContext.Provider value={{size:"3.5%"}}>
-                            <BiCommentDetail  className="cmt"></BiCommentDetail>
-                        </IconContext.Provider> */}
+                        <IconContext.Provider value={{size:"3.5%"}}>
+                        <BiCommentDetail  className="cmt"></BiCommentDetail>
+                        </IconContext.Provider>
+                        <input className="ip" type="text" placeholder="Type here.."  onChange={(event) => {
+                            setBody(event.target.value);
+                         }}></input>
+                        <button className="bn" onClick={() => {
+                            Comment(val.id);
+                        }}>Comment</button>
                         </div> 
                   </div>
               </div>

@@ -2,8 +2,9 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var comment = sequelize.define('comments', {
-    title: DataTypes.STRING,
-    body: DataTypes.STRING
+    username: DataTypes.STRING,
+    body: DataTypes.STRING,
+    postId:DataTypes.STRING
   }, {});
 
   comment.associate = function(models) {
