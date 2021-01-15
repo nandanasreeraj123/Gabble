@@ -42,12 +42,15 @@ module.exports.destroy=async function(req,res){
 //TODO: 
 module.exports.findAll=async function(req,res){
     try{
-        const allpost = await Post.findAll({
+        Post.findAll({ include:
+            [{ model: User,
+                as:'users',
+               required:true
+             }] 
+        }).then(posts=>{
+            return res.status(200).json({posts});
         });
-        if (allpost) {
-            return res.status(200).json({allpost});
-        }
-        return res.status(404).send("couldnt find");
+        // return res.status(404).send("couldnt find");
     }catch(err){
         return res.status(500).send(error.message);
     }
@@ -56,15 +59,20 @@ module.exports.findAll=async function(req,res){
 //TODO:  /posts/findByUserId/:id
 module.exports.findByUserId=async function(req,res){
     try{
-        const post = await Post.findAll({
-            where: { userId: req.params.id }
+        const post = await Post.findAll({ include:
+            [{ model: User,
+                as:'users',
+               required:true,
+                where:{
+                 id: req.params.id 
+               }
+             }] 
         });
         if (post) {
             return res.status(200).json({post});
         }
-        return res.status(404).send("Post with the specified userid does not exists");
     }catch(err){
-        return res.status(500).send(error.message);
+        return res.status(500).send(err.message);
     }
 }
 

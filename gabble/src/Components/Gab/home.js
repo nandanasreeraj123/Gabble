@@ -17,7 +17,7 @@ export default function Homies() {
 
   useEffect(() => {
     Axios.get("http://localhost:5000/posts/findAll").then((response) => {
-      setUploads(response.data.allpost);
+      setUploads(response.data.posts);
     });
   }, []);
 
@@ -46,7 +46,7 @@ const likePost = (id,key) => {
                           <Image cloudName="dk4j6tgw6" publicId={val.image} />
                         </div>
                         <p className="ph">{val.title} </p>
-                        <p> by @{val.author}</p>
+                        <p> by @{val.users.username}</p>
                         <div className="pb">
                           <p>{val.body}</p>
                           <p>{val.likes}</p>

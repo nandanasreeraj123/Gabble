@@ -20,7 +20,7 @@ export default function Profile(){
             console.log(response)
           setYourUploads(response.data.post);
         });
-      });
+      },[]);
 
     return(
     <div>
@@ -34,7 +34,7 @@ export default function Profile(){
                         <Image cloudName="dk4j6tgw6" publicId={val.image} />
                       </div>
                       <p className="ph">{val.title} </p>
-                      <p> by @{val.author}</p>
+                      <p> by @{val.users.username}</p>
                       <div className="pb">
                         <p>{val.body}</p>
                         <p>{val.likes}</p>
