@@ -1,19 +1,25 @@
 .bg{
+    width: 100%;
+    height: 100%;
     background-image: url('./bekky-bekks-7TuK3Jixsmc-unsplash.png');
     background-repeat: repeat;
+    background-size: 100% 100%;
+    
 }
 .im{
-    width: 50%;
-    margin-left: 25%;
+    width: 30%;
+    height:auto;
+    margin-left: 35%;
     margin-right: 25%;
     margin-top: 10%;
     
     /* margin-bottom: 6%; */
 }.flexes1{
     display: flex;
-  
-    margin-left: 45%;
-    font-size: 2rem;
+    margin-top:10%;
+    margin-left: 46%;
+    font-size: 1rem;
     padding-bottom: 4%;
     font-weight: 700;
+    font-family:'poppins',sans-serif;
   }

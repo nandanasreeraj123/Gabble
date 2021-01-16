@@ -13,13 +13,13 @@
 }
 
 .gt{
-    background-color: rgb(243, 222, 36);
+    background-color:#E6E294;
     border: none;
     outline: none;
     padding: 2%;
     border-radius: 10px;
     border: 2px black solid;
-    margin-top: 8%;
+    margin-top: 4%;
     
     /* width: 500px; */
 
@@ -36,31 +36,32 @@
 }
 
 .ng{
-    background-color: rgb(243, 222, 36);
+    background-color: #E6E294;
     border: none;
     outline: none;
     padding-top:1%;
     border-radius: 10px;
     border: 2px black solid;
-    margin-top: 4%;
+    margin-top: 3%;
     
     height:150px;
     /* width: 500px; */
 
 }
 
-.bn{
+.bnn{
     border: none;
     background-color: black;
     outline:none;
     color: white;
     padding-top: 1%;
+    padding-bottom: 1%;
     padding-left: 4%;
     padding-right: 4%;
     font-size:1.5rem;
     border-radius: 15px;
-    /* margin-left: 120%; */
-    margin-top: 6%;
+    margin-left:80%;
+    margin-top: 2%;
     cursor: pointer;
     float: left;
     

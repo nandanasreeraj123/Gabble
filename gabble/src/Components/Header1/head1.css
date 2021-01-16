@@ -1,10 +1,22 @@
 .flexes6{
     display: flex;
     justify-content: space-between;
-    margin: 5%;
+    margin-left: 5%;
+    margin-right:5%;
     margin-top: 3%;
     
 }
 .gabimg{
     width:30%;
+}
+
+.line{
+    width:90%;
+    height:0.5%;
+    margin-top:0;
+    margin-left:5%;
+}
+
+.l{
+    border-bottom: 4px solid #ccc;
 }

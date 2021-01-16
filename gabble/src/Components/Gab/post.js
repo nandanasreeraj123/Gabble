@@ -50,7 +50,7 @@ export default function Postss(){
         <input type="file" onChange={(e) => setImage(e.target.files)} />
         <div>
             {/* <a href='/gab'> */}
-            <button className="bn" onClick={upload}>Post</button>
+            <button className="bnn" onClick={upload}>Post</button>
             {/* </a> */}
         </div>
 

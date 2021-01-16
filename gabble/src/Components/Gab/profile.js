@@ -24,7 +24,7 @@ export default function Profile(){
 
     return(
     <div>
-                <Heads></Heads>
+            
           <h1>{localStorage.getItem("username")}</h1>
           {yourUploads.map((val, key) => {
            return(
